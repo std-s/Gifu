@@ -93,7 +93,7 @@ extension GIFAnimatable {
   /// - parameter preparationBlock: Callback for when preparation is done
   /// - parameter animationBlock: Callback for when all the loops of the animation are done (never called for infinite loops)
   /// - parameter loopBlock: Callback for when a loop is done (at the end of each loop)
-  public func animate(withGIFURL imageURL: URL, loopCount: Int = 0, preparationBlock: (() -> Void)? = nil, animationBlock: (() -> Void)? = nil, loopBlock: (() -> Void)? = nil) {
+  public func animate(withGIFURL imageURL: URL, loopCount: Int = 0, preparationBlock: ((Data) -> Void)? = nil, animationBlock: (() -> Void)? = nil, loopBlock: (() -> Void)? = nil) {
     let session = URLSession.shared
 
     let task = session.dataTask(with: imageURL) { (data, response, error) in
@@ -102,7 +102,9 @@ extension GIFAnimatable {
         print("Error downloading gif:", error.localizedDescription, "at url:", imageURL.absoluteString)
       case (let data?, _, _):
         DispatchQueue.main.async {
-          self.animate(withGIFData: data, loopCount: loopCount, preparationBlock: preparationBlock, animationBlock: animationBlock, loopBlock: loopBlock)
+            self.animate(withGIFData: data, loopCount: loopCount, preparationBlock: {
+                preparationBlock?(data)
+            }, animationBlock: animationBlock, loopBlock: loopBlock)
         }
       default: ()
       }
