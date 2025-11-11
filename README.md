@@ -1,9 +1,8 @@
 # ![Logo](https://github.com/kaishin/Gifu/raw/master/header.gif)
 
 ![Test](https://github.com/kaishin/Gifu/workflows/Test/badge.svg)
-[![GitHub release](https://img.shields.io/github/release/kaishin/Gifu.svg)](https://github.com/kaishin/Gifu/releases/latest)  [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS-lightgrey.svg)
-
+[![GitHub release](https://img.shields.io/github/release/kaishin/Gifu.svg)](https://github.com/kaishin/Gifu/releases/latest) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Swift 5.9+](https://img.shields.io/badge/Swift-5.9+-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20visionOS-lightgrey.svg)
 
 Gifu adds protocol-based, performance-aware animated GIF support to UIKit. (It's also a [prefecture in Japan](https://goo.gl/maps/CCeAc)).
 
@@ -16,25 +15,10 @@ Add the following to your `Package.swift` file:
 ```swift
 let package = Package(
     dependencies: [
-    .package(url: "https://github.com/kaishin/Gifu.git", from: "3.2.2")
+    .package(url: "https://github.com/kaishin/Gifu.git", from: "4.0.0")
     ],
 )
 ```
-
-### [Carthage](https://github.com/Carthage/Carthage)
-
-- Add the following to your Cartfile: `github "kaishin/Gifu"`
-- Then run `carthage update`
-- Follow the current instructions in [Carthage's README][carthage-installation]
-for up to date installation instructions.
-
-[carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
-
-### [CocoaPods](http://cocoapods.org)
-
-- Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html): `pod 'Gifu'`
-- You will also need to make sure you're opting into using frameworks: `use_frameworks!`
-- Then run `pod install` with CocoaPods 0.36 or newer.
 
 ## How It Works
 
@@ -177,9 +161,11 @@ See the [full API documentation](http://kaishin.github.io/Gifu/).
 
 ## Compatibility
 
-- iOS 9.0+
-- Swift 4.0
-- Xcode 9.0
+- iOS 14.0+
+- tvOS 14.0+
+- visionOS 1.0+
+- Swift 5.9+
+- Xcode 14.0+
 
 ## License
 
